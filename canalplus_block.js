@@ -1,4 +1,30 @@
-function get_pub() { return document.querySelector('span[data-testid="remainingTimeAd"]') != null; }
+function get_url() {
+    return window.location.hostname.toLowerCase();
+}
+
+function get_pub() {
+    const base_url = get_url();
+    if (base_url.includes("canalplus.com")) {
+        return document.querySelector('span[data-testid="remainingTimeAd"]') != null;
+    } else if (base_url.includes("youtube.com")) {
+        return document.querySelector('.ytp-ad-player-overlay-layout__ad-info-container') != null;
+    }
+
+    return false;
+}
+
+function play_video(video) {
+    const base_url = get_url();
+    if (base_url.includes("youtube.com")) {
+        const play_button = document.querySelector('.ytp-large-play-button ytp-button');
+        if (play_button != null) {
+            play_button.click();
+        }
+    } else {
+        video.play();
+    }
+}
+
 function is_valid_video(video) { return video != null && Number.isFinite(video.duration) && video.duration > 0; }
 
 let cooldown = false;
@@ -7,7 +33,7 @@ function set_video_time(video, time) {
     cooldown = true; setTimeout(() => { cooldown = false; }, 100);
 
     video.currentTime = time;
-    video.play();
+    play_video(video);
     console.log("Bypass pub");
 }
 

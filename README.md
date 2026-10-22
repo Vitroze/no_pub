@@ -1,7 +1,7 @@
 # No Pub
 
 `No Pub` is a browser extension that automatically skips advertisements on
-Canal+ and myCanal.
+Canal+ and myCanal and YouTube.
 
 The extension runs on Canal+ pages and detects video advertisements. When an
 advertisement is detected, it moves the video close to the end and starts
@@ -12,6 +12,7 @@ playback automatically.
 The extension runs on:
 
 - `*.canalplus.com`
+- `*.youtube.com`
 
 ## Quick installation
 
@@ -38,7 +39,7 @@ The extension runs on:
 
 Once installed:
 
-1. Open Canal+ or myCanal.
+1. Open Canal+ or myCanal or YouTube in your browser.
 2. Start watching a video.
 3. The extension automatically detects and skips advertisements.
 

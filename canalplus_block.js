@@ -1,5 +1,5 @@
 function get_video() {
-    const video = document.querySelector('div[data-testid="videoCore"] video');
+    const video = document.querySelector("video");
     return video;
 }
 
@@ -27,7 +27,7 @@ function bypass_pub() {
 }
 
 function get_pub() {
-    const btn = document.querySelector('button[aria-label="Lien pour en savoir plus sur la publicité"]');
+    const btn = document.querySelector('span[data-testid="remainingTimeAd"]');
     return btn != null;
 }
 
@@ -41,6 +41,6 @@ if (get_pub()) {
     bypass_pub();
 }
 
-observer.observe(document.body, { childList: true, subtree: true });
+observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['data-testid'] });
 
 console.log("Canal+ pub bypasser loaded");

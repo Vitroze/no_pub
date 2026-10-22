@@ -1,7 +1,11 @@
 function get_pub() { return document.querySelector('span[data-testid="remainingTimeAd"]') != null; }
 function is_valid_video(video) { return video != null && Number.isFinite(video.duration) && video.duration > 0; }
 
+let cooldown = false;
 function set_video_time(video, time) {
+    if (cooldown) { return; }
+    cooldown = true; setTimeout(() => { cooldown = false; }, 100);
+
     video.currentTime = time;
     video.play();
     console.log("Bypass pub");
@@ -10,11 +14,11 @@ function set_video_time(video, time) {
 function bypass_pub() {
     const video = document.querySelector("video");
     if (is_valid_video(video)) {
-        set_video_time(video, video.duration - 1);
+        set_video_time(video, video.duration - 0.1);
     } else if (video != null) {
         video.addEventListener('loadedmetadata', () => {
             if (is_valid_video(video)) {
-                set_video_time(video, video.duration - 1);
+                set_video_time(video, video.duration - 0.1);
             }
         }, { once: true });
     }

@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "No Pub",
+  "version": "1.0",
+
+  "description": "Passe les pubs sur canal+ et mycanal.",
+  "content_scripts": [
+    {
+      "matches": ["*://canalplus.com/*"],
+      "js": ["canalplus_block.js"]
+    }
+  ]
+}

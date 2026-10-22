@@ -6,7 +6,7 @@
   "description": "Passe les pubs sur canal+ et mycanal.",
   "content_scripts": [
     {
-      "matches": ["*://canalplus.com/*"],
+      "matches": ["*://*.canalplus.com/*"],
       "js": ["canalplus_block.js"]
     }
   ]

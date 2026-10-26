@@ -1,12 +1,12 @@
 {
   "manifest_version": 3,
   "name": "No Pub",
-  "version": "1.0",
+  "version": "1.0.2",
   "description": "Passe les pubs sur MyCanal/Canal+ et YouTube.",
   "browser_specific_settings": {
     "gecko": {
       "id": "nopub-extension@local",
-      "strict_min_version": "109.0",
+      "strict_min_version": "140.0",
       "data_collection_permissions": {
         "required": ["none"]
       }

@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "No Pub",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Passe les pubs sur MyCanal/Canal+ et YouTube.",
   "browser_specific_settings": {
     "gecko": {
@@ -11,7 +11,13 @@
     }
   },
   "host_permissions": ["*://*.canalplus.com/*", "*://*.youtube.com/*"],
-  "action": {},
+  "icons": { "48": "icon.svg", "96": "icon.svg" },
+  "action": {
+    "default_icon": "icon.svg",
+    "default_title": "No Pub",
+    "default_popup": "welcome.html",
+    "default_area": "navbar"
+  },
   "background": { "scripts": ["background.js"] },
   "content_scripts": [
     {

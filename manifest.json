@@ -7,11 +7,12 @@
     "gecko": {
       "id": "nopub-extension@local",
       "strict_min_version": "140.0",
-      "data_collection_permissions": {
-        "required": ["none"]
-      }
+      "data_collection_permissions": { "required": ["none"] }
     }
   },
+  "host_permissions": ["*://*.canalplus.com/*", "*://*.youtube.com/*"],
+  "action": {},
+  "background": { "scripts": ["background.js"] },
   "content_scripts": [
     {
       "matches": ["*://*.canalplus.com/*", "*://*.youtube.com/*"],

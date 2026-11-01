@@ -7,7 +7,7 @@ function get_pub() {
     if (base_url.includes("canalplus.com")) {
         return document.querySelector('span[data-testid="remainingTimeAd"]') != null;
     } else if (base_url.includes("youtube.com")) {
-        return document.querySelector('.ytp-ad-player-overlay-layout__ad-info-container') != null;
+        return document.querySelector('.ytp-ad-player-overlay-layout__ad-info-container') != null || document.querySelector('[id^="skip-button:"]') != null || document.querySelector('.ytp-ad-skip-button-modern.ytp-button.ytp-ad-skip-button-icon-delhi') != null;
     }
 
     return false;
@@ -38,6 +38,20 @@ function set_video_time(video, time) {
 }
 
 function bypass_pub() {
+    const skipPubYoutube = document.querySelector('[id^="skip-button:"]');
+    if (skipPubYoutube != null) {
+        skipPubYoutube.click();
+        console.log("[YouTube] Bypass pub");
+        return;
+    }
+
+    const skipInvestigationYoutube = document.querySelector('.ytp-ad-skip-button-modern.ytp-button.ytp-ad-skip-button-icon-delhi');
+    if (skipInvestigationYoutube != null) {
+        skipInvestigationYoutube.click();
+        console.log("[YouTube - Investigation] Bypass pub");
+        return;
+    }
+
     const video = document.querySelector("video");
     if (is_valid_video(video)) {
         set_video_time(video, video.duration - 0.1);

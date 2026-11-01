@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "No Pub",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Passe les pubs sur MyCanal/Canal+ et YouTube.",
   "browser_specific_settings": {
     "gecko": {
